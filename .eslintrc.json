@@ -5,7 +5,7 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier", "prettier/react"],
+  "extends": ["plugin:react/recommended", "airbnb", "prettier", "prettier/react", "plugin:css-modules/recommended"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -13,13 +13,15 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier", "simple-import-sort", "import"],
+  "plugins": ["react", "prettier", "simple-import-sort", "import", "css-modules"],
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": 0,
     "import/no-extraneous-dependencies": ["error",  {"devDependencies": true}],
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "css-modules/no-unused-class": [2, { "camelCase": true }],
+    "css-modules/no-undef-class": [2, { "camelCase": true }]
   }
 }
