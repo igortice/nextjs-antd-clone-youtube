@@ -10,12 +10,14 @@ import {
 } from '@ant-design/icons';
 
 import Head from 'next/head';
+import { NAME_APP } from 'constants/application';
 import { useState } from 'react';
 
 const { Header, Sider, Content, Footer } = Layout;
 
-const index = ({ children, title = process.env.NEXT_PUBLIC_NAME_APP }) => {
+const index = ({ children, title = NAME_APP }) => {
   const [collapsed, setCollapsed] = useState(true);
+
   return (
     <>
       <Head>
