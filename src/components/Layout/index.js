@@ -28,16 +28,23 @@ const index = ({ children, title = NAME_APP }) => {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <Layout style={{ height: '100vh' }}>
+
+      <Layout className="h-screen">
         <Sider
           onBreakpoint={(broken) => setCollapsed(broken)}
           trigger={null}
           collapsible
           breakpoint="lg"
           collapsed={collapsed}
+          style={{ background: '#212121' }}
         >
           <div className="logo" />
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+          <Menu
+            theme="dark"
+            style={{ background: '#212121' }}
+            mode="inline"
+            defaultSelectedKeys={['1']}
+          >
             <Menu.Item key="1" icon={<UserOutlined />}>
               nav 1
             </Menu.Item>
