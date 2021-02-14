@@ -8,9 +8,12 @@ import {
   UserOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons';
+import { faFire, faHome } from '@fortawesome/free-solid-svg-icons';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Head from 'next/head';
 import { NAME_APP } from 'constants/application';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { useState } from 'react';
 
 const { Header, Sider, Content, Footer } = Layout;
@@ -38,21 +41,25 @@ const index = ({ children, title = NAME_APP }) => {
           collapsed={collapsed}
           style={{ background: '#212121' }}
         >
-          <div className="logo" />
+          <div className="flex flex-row items-center h-16 pl-3 bg-white">
+            <FontAwesomeIcon color="red" size="4x" icon={faYoutube} />
+            {!collapsed && (
+              <div className="text-gray mx-2 text-lg leading-tight font-extrabold">
+                {title}
+              </div>
+            )}
+          </div>
           <Menu
             theme="dark"
             style={{ background: '#212121' }}
             mode="inline"
             defaultSelectedKeys={['1']}
           >
-            <Menu.Item key="1" icon={<UserOutlined />}>
-              nav 1
+            <Menu.Item key="1" icon={<FontAwesomeIcon icon={faHome} />}>
+              Início
             </Menu.Item>
-            <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-              nav 2
-            </Menu.Item>
-            <Menu.Item key="3" icon={<UploadOutlined />}>
-              nav 3
+            <Menu.Item key="2" icon={<FontAwesomeIcon icon={faFire} />}>
+              Em Alta
             </Menu.Item>
           </Menu>
         </Sider>
